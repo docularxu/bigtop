@@ -101,9 +101,15 @@ class hadoop_hive {
       ensure => latest,
     }
 
+    exec { "schematool":
+      command => "/usr/bin/sudo -u hive /usr/lib/hive/bin/schematool -dbType derby -initSchema",
+      require => [ Package["jdk"], Package["hive-metastore"], File["/etc/hive/conf/hive-site.xml"] ],
+      logoutput => true,
+    }
+
     service { "hive-metastore":
       ensure => running,
-      require => Package["hive-metastore"],
+      require => [ Package["hive-metastore"], Exec["schematool"] ],
       subscribe => File["/etc/hive/conf/hive-site.xml"],
       hasrestart => true,
       hasstatus => true,
