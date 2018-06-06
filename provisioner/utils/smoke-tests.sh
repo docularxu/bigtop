@@ -29,6 +29,7 @@ echo -e "\n===== START TO RUN SMOKE TESTS: $SMOKE_TESTS =====\n"
 
 export HADOOP_CONF_DIR=/etc/hadoop/conf/
 export HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce/
+export SPARK_HOME=/usr/lib/spark
 export HIVE_HOME=/usr/lib/hive/
 export PIG_HOME=/usr/lib/pig/
 export FLUME_HOME=/usr/lib/flume/
