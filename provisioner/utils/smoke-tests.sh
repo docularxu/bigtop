@@ -39,6 +39,7 @@ export MAHOUT_HOME="/usr/lib/mahout"
 export HBASE_HOME=/usr/lib/hbase
 export HBASE_CONF_DIR=/usr/lib/hbase/conf
 export ZOOKEEPER_HOME=/usr/lib/zookeeper
+export AMBARI_URL="http://localhost:8080"
 
 prep() {
     HADOOP_COMMAND=$1
