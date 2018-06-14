@@ -78,4 +78,5 @@ test.doFirst {
 test {
   // Change the default location where test data is picked up
   systemProperty 'test.resources.dir', "${buildDir}/resources/test/"
+  systemProperty 'user.dir', "/bigtop-home"
 }
