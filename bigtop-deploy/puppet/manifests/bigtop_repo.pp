@@ -46,14 +46,17 @@ class bigtop_repo {
           ensure => present
        }
        each ($baseurls_array) |$count, $baseurl| {
+         apt::pin { "Bigtop_$count": origin => '""', priority => 700 }
          notify {"Baseurl: $baseurl" :}
          apt::source { "Bigtop_$count":
             location => $baseurl,
             release => "bigtop",
             repos => "contrib",
             # BIGTOP-2796. Give Bigtop repo higher priority to solve zookeeper package conflict probem on Ubuntu
-            pin => "900",
+            #pin => "900",
             ensure => present,
+            trusted_source => true,
+            allow_unsigned => true,
          }
        }
       # It seems that calling update explicitely isn't needed because as far I can see
