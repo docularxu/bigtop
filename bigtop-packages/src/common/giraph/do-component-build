@@ -23,3 +23,7 @@ BULK_MVN_OPTS="-Phadoop_2 -DskipTests -Dhadoop.version=$HADOOP_VERSION -Dzookeep
 mvn $BULK_MVN_OPTS clean install
 # mvn $BULK_MVN_OPTS -Ddependency.locations.enabled=false site:site
 # mvn $BULK_MVN_OPTS -Ddependency.locations.enabled=false site:stage
+
+# Tar and copy to output directory
+cd giraph-dist/target/giraph-${GIRAPH_VERSION}-for-hadoop-${HADOOP_VERSION}-bin
+tar -zcvf ../../../giraph-dist-${GIRAPH_VERSION}-for-hadoop-${HADOOP_VERSION}-bin.tar.gz giraph-${GIRAPH_VERSION}-for-hadoop-${HADOOP_VERSION}
