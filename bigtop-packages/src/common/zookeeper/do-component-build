@@ -29,3 +29,6 @@ ant package package-native tar ${ANT_OPTS}
 
 mvn install:install-file -DcreateChecksum=true -DgroupId=org.apache.zookeeper -DartifactId=zookeeper -Dversion=$ZOOKEEPER_VERSION -Dpackaging=jar -Dfile=build/zookeeper-$ZOOKEEPER_VERSION.jar
 mvn install:install-file -DcreateChecksum=true -DgroupId=org.apache.zookeeper -DartifactId=zookeeper -Dversion=$ZOOKEEPER_VERSION -Dclassifier=tests -Dpackaging=jar -Dfile=build/zookeeper-$ZOOKEEPER_VERSION-test.jar
+
+# Copy tar.gz to output
+cp build/zookeeper-${ZOOKEEPER_VERSION}.tar.gz ../
