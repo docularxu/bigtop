@@ -355,10 +355,10 @@ def genTasks = { target ->
       workingDir "$PKG_OUTPUT_DIR/$PKG_NAME-$PKG_VERSION"
       commandLine command.split(' ')
     }
-    exec {
-      workingDir "$PKG_OUTPUT_DIR"
-      commandLine 'rm','-rf',"$PKG_NAME-$PKG_VERSION"
-    }
+    // exec {
+    //  workingDir "$PKG_OUTPUT_DIR"
+    //  commandLine 'rm','-rf',"$PKG_NAME-$PKG_VERSION"
+    // }
     touchTargetFile(config.bigtop.components[target].targetdeb)
   }
   // Guarantee that tasks are ran in the order set by BOM file dependencies section
