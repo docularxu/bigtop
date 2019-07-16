@@ -26,3 +26,5 @@ mvn clean package -DskipTests -Pdist -Dtar -Dhadoop.version=$HADOOP_VERSION "$@"
 
 (cd build; tar --strip-components=1 -xzvf  ../tajo-dist/target/tajo-${TAJO_VERSION}.tar.gz)
 
+# Copy .tar.gz to output
+cp tajo-dist/target/tajo-${TAJO_VERSION}.tar.gz ../
