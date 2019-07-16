@@ -146,3 +146,6 @@ cp -r target/staging/hadoop-project build/share/doc
 
 # Copy fuse output to the build directory
 cp hadoop-hdfs-project/hadoop-hdfs-native-client/target/main/native/fuse-dfs/fuse_dfs build/bin
+
+# Copy binary build result
+cp hadoop-dist/target/hadoop-${HADOOP_VERSION}.tar.gz ..
