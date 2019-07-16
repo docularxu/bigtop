@@ -36,3 +36,5 @@ mkdir build
   
 cp core/build/distributions/kafka_*.tgz build/
 
+# Copy .tar.gz to output
+cp core/build/distributions/kafka_*.tgz ../
