@@ -24,3 +24,8 @@ set -ex
 mvn install $FLINK_BUILD_OPTS -Drat.skip=true -DskipTests -Dhadoop.version=$HADOOP_VERSION "$@"
 cd flink-dist
 mvn install $FLINK_BUILD_OPTS -Drat.skip=true -DskipTests -Dhadoop.version=$HADOOP_VERSION "$@"
+
+# Tar and Copy binary built result to output/flink
+# since we are already in output/flink/flink-${FLINK_VERSION}/flink-dist
+cd target/flink-${FLINK_VERSION}-bin
+tar -zcvf ../../../../flink-${FLINK_VERSION}-bin-hadoop-${HADOOP_VERSION}-scala-${SCALA_VERSION}.tar.gz flink-${FLINK_VERSION}
