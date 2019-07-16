@@ -33,3 +33,6 @@ mvn -DskipTests  \
   -Dhive.version=${HIVE_VERSION} \
   -Dkafka.version=${KAFKA_VERSION} \
   clean install "$@"
+
+# Copy tar.gz to output
+cp flume-ng-dist/target/apache-flume-${FLUME_VERSION}-bin.tar.gz ../
