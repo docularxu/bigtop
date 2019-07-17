@@ -33,7 +33,11 @@ BUILD_OPTS="-Divy.home=${HOME}/.ivy2 -Dsbt.ivy.home=${HOME}/.ivy2 -Duser.home=${
             -Psparkr \
             $SPARK_BUILD_OPTS"
 
-./dev/make-distribution.sh --r $BUILD_OPTS -DskipTests
+# Use --tgz option to have a tar gz version of the Spark distribution.
+./dev/make-distribution.sh --tgz --r $BUILD_OPTS -DskipTests
+
+# Copy .tar.gz to output
+cp spark-${SPARK_VERSION}-bin-${HADOOP_VERSION}.tgz ../
 
 SPARK_SKIP_TESTS=$([ "$SPARK_RUN_TESTS" = "true" ] && echo false || echo true)
 
