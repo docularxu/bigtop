@@ -37,3 +37,6 @@ tar -C build/dist --strip-components=1 -xzf packaging/target/apache-hive-${HIVE_
 
 # HIVE-13177 
 sed -i "s#jdbcStandaloneJarPath=\`ls \${HIVE_LIB}/hive-jdbc-\*-standalone.jar\`#jdbcStandaloneJarPath=#" build/dist/bin/ext/beeline.sh
+
+# Copy .tar.gz to output
+cp packaging/target/apache-hive-${HIVE_VERSION}-bin.tar.gz ../
