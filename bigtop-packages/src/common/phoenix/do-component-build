@@ -37,3 +37,9 @@ cp -R bin build/;
 cp -R phoenix-pherf/config build/bin/
 cp -R examples build/
 cp dev/release_files/* build/
+
+# tar binary
+tar --transform "s/^build/phoenix-${PHOENIX_VERSION}-bin/" \
+	-zcvf phoenix-${PHOENIX_VERSION}-bin.tar.gz build
+# copy .tar.gz to output
+cp phoenix-${PHOENIX_VERSION}-bin.tar.gz ../
