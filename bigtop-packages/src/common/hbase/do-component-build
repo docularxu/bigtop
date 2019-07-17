@@ -46,3 +46,6 @@ mvn -DskipTests -Dslf4j.version=1.6.1         \
 rm -rf build
 mkdir build
 tar -C build --strip-components=1 -xzf hbase-assembly/target/hbase*.tar.gz
+
+# Copy .tar.gz to output
+cp hbase-assembly/target/hbase*.tar.gz ../
