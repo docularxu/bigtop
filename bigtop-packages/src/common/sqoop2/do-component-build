@@ -31,6 +31,9 @@ if [ -z "$GIT_REPO" ]; then
     mvn -DskipTests=true source:jar-no-fork javadoc:jar \
         -P=binary ${MAVEN_ADDITIONAL} $@ $MAVEN_INST_DEPLOY
     
+# copy .tar.gz to output
+    cp dist/target/sqoop-${SQOOP2_VERSION}-bin-hadoop*.tar.gz ../
+
 # Repackaging and changing the name to "sqoop2" is necessary as long
 # as we continue to distribute a version of Sqoop 1.x as "sqoop"
     cd dist/target
