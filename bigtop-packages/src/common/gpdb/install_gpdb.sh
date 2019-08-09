@@ -17,3 +17,8 @@
 set -ex
 
 make install DESTDIR=$1
+
+# tar and copy to output
+tar --transform "s#$1#gpdb-${GPDB_VERSION}-bin#" -P \
+    -zcvf gpdb-${GPDB_VERSION}-bin.tar.gz $1
+cp gpdb-${GPDB_VERSION}-bin.tar.gz ../
