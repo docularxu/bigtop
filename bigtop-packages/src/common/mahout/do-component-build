@@ -27,3 +27,6 @@ mvn clean install -DskipTests -Dmahout.skip.distribution=false \
 
 mkdir build
 tar -C build --strip-components=1 -xzf distribution/target/apache-mahout-distribution-$MAHOUT_VERSION.tar.gz 
+
+# copy .tar.gz to output
+cp distribution/target/apache-mahout-distribution-$MAHOUT_VERSION.tar.gz ../
