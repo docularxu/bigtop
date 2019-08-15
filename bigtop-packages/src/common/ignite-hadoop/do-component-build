@@ -37,3 +37,6 @@ rm -rf META-INF
 cd -
 
 mvn clean install -DskipTests -Dhadoop.version=$HADOOP_VERSION -Dspark.version=$SPARK_VERSION -Dignite.edition=hadoop
+
+# cp .zip to output
+cp target/bin/apache-ignite-hadoop-${IGNITE_HADOOP_VERSION}-bin.zip ../
