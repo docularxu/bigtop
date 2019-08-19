@@ -24,4 +24,5 @@ rm -rf build/dist
 mkdir -p build/dist
 tar -C build/dist --strip-components=1 -xzf distribution/target/ycsb-$YCSB_VERSION.tar.gz
 
-
+# copy .tar.gz to output
+cp distribution/target/ycsb-$YCSB_VERSION.tar.gz ../
