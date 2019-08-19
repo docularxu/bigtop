@@ -51,3 +51,6 @@ mvn $BUILD_OPTS clean package
 
 mkdir -p build/dist
 tar -C build/dist --strip-components=1 -xzf zeppelin-distribution/target/zeppelin-*.tar.gz
+
+# copy .tar.gz to output
+cp zeppelin-distribution/target/zeppelin-*.tar.gz ../
